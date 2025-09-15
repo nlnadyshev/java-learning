@@ -1,0 +1,260 @@
+1. import java.util.Scanner; //хитрый гад без импорта сканер не прописать
+public class Main {
+    public static void main(String[] args) {
+        // создаю переменные
+        int myInt = 666;
+    byte myByte = 100;
+    short myShort = 32000;
+    long myLong = 89035316282L;
+    float myFloat = 3.14f;
+double myDouble = 123.456789;
+char c = 'A';
+boolean b = true;
+// вывожу значения
+System.out.println("byte:" +myByte);
+System.out.println("int:" +myInt);
+System.out.println("short:" +myShort);
+System.out.println("float:" +myFloat);
+System.out.println("double:" +myDouble);
+System.out.println("long:" +myLong);
+System.out.println("char:" +c);
+System.out.println("boolean:" +b);
+// бибусь с именем возрастом
+        String y = "My";
+        String t = " name";
+        String u = " Is Jeka";
+        String i = " and i am ";
+        String o = " years old";
+        int age = 50;
+        System.out.println(y+t+u+i+age+o);
+        // чтение чисел и вывод
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите первое число: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Введите второе число: ");
+        int num2 = scanner.nextInt();
+        int sum = num1+num2;
+        System.out.println("Summary: "+ sum);
+        scanner.close();
+    }
+}
+------------------------------------------------------------------------------------------
+2. import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // 1. Считать число и проверить: положительное оно или отрицательное.
+        System.out.print("Введите число: ");
+        int num = scanner.nextInt();
+        if (num > 0) {
+            System.out.println("Число положительное");
+        } else if (num < 0) {
+            System.out.println("Число отрицательное");
+        } else {
+            System.out.println("Число равно нулю");
+        }
+
+        // 2. Считать число и проверить: чётное оно или нечётное.
+        if (num % 2 == 0) {
+            System.out.println("Число чётное");
+        } else {
+            System.out.println("Число нечётное");
+        }
+
+        // 3. Считать два числа и вывести большее.
+        System.out.print("Введите первое число: ");
+        int a = scanner.nextInt();
+        System.out.print("Введите второе число: ");
+        int b = scanner.nextInt();
+        if (a > b) {
+            System.out.println("Большее число: " + a);
+        } else if (b > a) {
+            System.out.println("Большее число: " + b);
+        } else {
+            System.out.println("Числа равны");
+        }
+
+        // 4. Считать три числа и вывести наибольшее.
+        System.out.print("Введите три числа через пробел: ");
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        int z = scanner.nextInt();
+        int max = x;
+        if (y > max) max = y;
+        if (z > max) max = z;
+        System.out.println("Наибольшее число: " + max);
+
+        // 5. Считать число и проверить: делится ли оно на 3.
+        System.out.print("Введите число для проверки делимости на 3: ");
+        int d = scanner.nextInt();
+        if (d % 3 == 0) {
+            System.out.println("Число делится на 3");
+        } else {
+            System.out.println("Число не делится на 3");
+        }
+
+        // 6. Считать возраст и проверить: можно ли голосовать (>=18).
+        System.out.print("Введите возраст: ");
+        int age = scanner.nextInt();
+        if (age >= 18) {
+            System.out.println("Можно голосовать");
+        } else {
+            System.out.println("Голосовать нельзя");
+        }
+
+        // 7. Считать месяц (1–12) и вывести название сезона.
+        System.out.print("Введите месяц (1-12): ");
+        int month = scanner.nextInt();
+        if (month == 12 || month == 1 || month == 2) {
+            System.out.println("Зима");
+        } else if (month >= 3 && month <= 5) {
+            System.out.println("Весна");
+        } else if (month >= 6 && month <= 8) {
+            System.out.println("Лето");
+        } else if (month >= 9 && month <= 11) {
+            System.out.println("Осень");
+        } else {
+            System.out.println("Некорректный месяц");
+        }
+
+        // 8. Считать день недели (1–7) и вывести название дня.
+        System.out.print("Введите день недели (1-7): ");
+        int day = scanner.nextInt();
+        switch (day) {
+            case 1: System.out.println("Понедельник"); break;
+            case 2: System.out.println("Вторник"); break;
+            case 3: System.out.println("Среда"); break;
+            case 4: System.out.println("Четверг"); break;
+            case 5: System.out.println("Пятница"); break;
+            case 6: System.out.println("Суббота"); break;
+            case 7: System.out.println("Воскресенье"); break;
+            default: System.out.println("Некорректный день");
+        }
+
+        // 9. Считать оценку (0–100) и вывести букву: A (90–100), B (80–89), C (70–79), D (60–69), F (0–59).
+        System.out.print("Введите оценку (0-100): ");
+        int grade = scanner.nextInt();
+        if (grade >= 90 && grade <= 100) {
+            System.out.println("Оценка: A");
+        } else if (grade >= 80) {
+            System.out.println("Оценка: B");
+        } else if (grade >= 70) {
+            System.out.println("Оценка: C");
+        } else if (grade >= 60) {
+            System.out.println("Оценка: D");
+        } else if (grade >= 0) {
+            System.out.println("Оценка: F");
+        } else {
+            System.out.println("Некорректная оценка");
+        }
+
+        // 10. Считать число и проверить через switch: 1 → «один», 2 → «два», 3 → «три», иначе «другое».
+        System.out.print("Введите число (1-3): ");
+        int sw = scanner.nextInt();
+        switch (sw) {
+            case 1: System.out.println("один"); break;
+            case 2: System.out.println("два"); break;
+            case 3: System.out.println("три"); break;
+            default: System.out.println("другое");
+        }
+
+        scanner.close();
+    }
+-------------------------------------------------------
+
+3. public class Main {
+    public static void main(String[] args) {
+        // 1. Рассчитать расстояние, проходимое светом (книга).
+        long lightspeed = 300_000; // км/сек
+        long seconds = 24 * 60 * 60; // количество секунд в сутках
+        long distance = lightspeed * seconds;
+        System.out.println("1) Свет проходит за день: " + distance + " км");
+
+        // 2. Вычислить площадь круга (книга)
+        double radius = 10.0;
+        double circleArea = Math.PI * radius * radius;
+        System.out.println("2) Площадь круга: " + circleArea);
+
+        // 3. Инкрементируй как число в цикле(от 1 - 200) тип char. Выведи содержимое в консоль
+        System.out.println("3) Инкремент char от 1 до 200:");
+        for (char c = 1; c <= 200; c++) {
+            System.out.print(c + " ");
+        }
+        System.out.println();
+
+        // 4. Инцииализируй строку из 10 слов и перенеси каждое слово с новой строки (используя \n)
+        String text = "Java\nэто\nсила\nпитон\nэто\nмогила\nи\nЖэка\nбудет\nрад";
+        System.out.println("4) Строка с переносами:");
+        System.out.println(text);
+
+        // 5. Объяви в одной строке 3 переменные типа int, далее по одной инициализируй их.
+        int x = 1, y = 2, z = 3;
+        System.out.println("5) Переменные: x=" + x + " y=" + y + " z=" + z);
+
+        // 6. Объяви переменную а и b сразу проинициализируй их. Объяви переменную с и присвой ей значение a * b. выведи на экран
+        int a = 5, b = 7;
+        int c = a * b;
+        System.out.println("6) a * b = " + c);
+
+        // 7. Объяви переменную в блоке иинициализируй её. Попробуй обратиться к ней за блоком, например, выведя на экран значение
+        {
+            int blockVar = 42;
+            System.out.println("7) Переменная внутри блока: " + blockVar);
+        }
+        // Следующая строка вызовет ошибку компиляции, если раскомментировать
+        // System.out.println(blockVar);
+
+        // 8. Создай массив из 5 элементов и инициализируй каждый элемент любым значением. Выведи все значения в консоль
+        int[] arr = new int[5];
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        arr[3] = 40;
+        arr[4] = 50;
+        System.out.println("8) Массив arr:");
+        for (int value : arr) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+
+        // 9. Создай массив и проинициализиуй при помощи {}. (5 элементов типа String) Выведи в консоль
+        String[] words = {"Жека", "топчик", "я", "бездарь", "хнык"};
+        System.out.println("9) Массив слов:");
+        for (String word : words) {
+            System.out.println(word);
+        }
+
+        // 10. Создай многомерный массив. Попробуй его инициализировать (*)
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        System.out.println("10) Многомерный массив:");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // 11. Реализуй несколько формул. Вычисление расстояния, закон архимеда, mv2/2
+        double s = 100; // расстояние
+        double t = 20;  // время
+        double v = s / t; // скорость
+        System.out.println("11.1) Скорость = " + v);
+
+        double rho = 1000; // плотность воды
+        double g = 9.8;
+        double volume = 0.5; // объем
+        double fa = rho * g * volume; // сила Архимеда
+        System.out.println("11.2) Сила Архимеда = " + fa);
+
+        double mass = 50;
+        double vel = 10;
+        double energy = 0.5 * mass * vel * vel;
+        System.out.println("11.3) Кинетическая энергия = " + energy);
+    }
+}
