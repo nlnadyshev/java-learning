@@ -258,3 +258,431 @@ public class Main {
         System.out.println("11.3) Кинетическая энергия = " + energy);
     }
 }
+--------------------------------------------------------
+4
+Вывести числа от 1 до 10 с помощью for.
+
+Вывести числа от 10 до 1 с помощью while.
+
+Вывести таблицу умножения на 5.
+
+Посчитать сумму чисел от 1 до 100.
+
+Посчитать произведение чисел от 1 до 10.
+
+Считать число и вывести все числа от 1 до него.
+
+Считать число и вывести его делители.
+
+Считать число и вывести факториал.
+
+Считать число и проверить, простое ли оно.
+
+Считать число и вывести все его цифры по одной.
+------------------------------------------------------
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // 1. Вывести числа от 1 до 10 с помощью for.
+        System.out.println("1) Числа от 1 до 10:");
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        // 2. Вывести числа от 10 до 1 с помощью while.
+        System.out.println("2) Числа от 10 до 1:");
+        int j = 10;
+        while (j >= 1) {
+            System.out.print(j + " ");
+            j--;
+        }
+        System.out.println();
+
+        // 3. Вывести таблицу умножения на 5.
+        System.out.println("3) Таблица умножения на 5:");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("5 x " + i + " = " + (5 * i));
+        }
+
+        // 4. Посчитать сумму чисел от 1 до 100.
+        int sum = 0;
+        for (int i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        System.out.println("4) Сумма чисел от 1 до 100 = " + sum);
+
+        // 5. Посчитать произведение чисел от 1 до 10.
+        long product = 1;
+        for (int i = 1; i <= 10; i++) {
+            product *= i;
+        }
+        System.out.println("5) Произведение чисел от 1 до 10 = " + product);
+
+        // 6. Считать число и вывести все числа от 1 до него.
+        System.out.print("6) Введите число: ");
+        int n = scanner.nextInt();
+        System.out.println("Числа от 1 до " + n + ":");
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        // 7. Считать число и вывести его делители.
+        System.out.print("7) Введите число для делителей: ");
+        int num = scanner.nextInt();
+        System.out.print("Делители числа " + num + ": ");
+        for (int i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+
+        // 8. Считать число и вывести факториал.
+        System.out.print("8) Введите число для факториала: ");
+        int factNum = scanner.nextInt();
+        long factorial = 1;
+        for (int i = 1; i <= factNum; i++) {
+            factorial *= i;
+        }
+        System.out.println("Факториал числа " + factNum + " = " + factorial);
+
+        // 9. Считать число и проверить, простое ли оно.
+        System.out.print("9) Введите число для проверки простоты: ");
+        int primeNum = scanner.nextInt();
+        boolean isPrime = true;
+        if (primeNum <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(primeNum); i++) {
+                if (primeNum % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+        if (isPrime) {
+            System.out.println(primeNum + " — простое число");
+        } else {
+            System.out.println(primeNum + " — составное число");
+        }
+
+        // 10. Считать число и вывести все его цифры по одной.
+        System.out.print("10) Введите число: ");
+        int digitsNum = scanner.nextInt();
+        System.out.println("Цифры числа:");
+        String strNum = String.valueOf(digitsNum);
+        for (int i = 0; i < strNum.length(); i++) {
+            System.out.println(strNum.charAt(i));
+        }
+
+        scanner.close();
+    }
+}
+--------------------------------------------------------
+Создать массив из 5 чисел и вывести все элементы.
+
+Найти минимальное число в массиве.
+
+Найти максимальное число в массиве.
+
+Посчитать сумму всех элементов массива.
+
+Посчитать среднее значение элементов массива.
+
+Считать число и проверить, есть ли оно в массиве.
+
+Развернуть массив задом наперёд.
+
+Посчитать количество чётных элементов в массиве.
+
+Отсортировать массив пузырьком.
+
+Объединить два массива в один.
+--------------------------------------------------------
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // 1. Создать массив из 5 чисел и вывести все элементы.
+        int[] arr = {12, 5, 7, 20, 3};
+        System.out.println("1) Массив:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // 2. Найти минимальное число в массиве.
+        int min = arr[0];
+        for (int num : arr) {
+            if (num < min) {
+                min = num;
+            }
+        }
+        System.out.println("2) Минимальное число: " + min);
+
+        // 3. Найти максимальное число в массиве.
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        System.out.println("3) Максимальное число: " + max);
+
+        // 4. Посчитать сумму всех элементов массива.
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        System.out.println("4) Сумма элементов массива: " + sum);
+
+        // 5. Посчитать среднее значение элементов массива.
+        double average = (double) sum / arr.length;
+        System.out.println("5) Среднее значение: " + average);
+
+        // 6. Считать число и проверить, есть ли оно в массиве.
+        System.out.print("6) Введите число для поиска: ");
+        int search = scanner.nextInt();
+        boolean found = false;
+        for (int num : arr) {
+            if (num == search) {
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            System.out.println("Число " + search + " найдено в массиве");
+        } else {
+            System.out.println("Число " + search + " не найдено в массиве");
+        }
+
+        // 7. Развернуть массив задом наперёд.
+        System.out.println("7) Разворот массива:");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        // 8. Посчитать количество чётных элементов в массиве.
+        int evenCount = 0;
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evenCount++;
+            }
+        }
+        System.out.println("8) Количество чётных элементов: " + evenCount);
+
+        // 9. Отсортировать массив пузырьком.
+        int[] bubbleArr = Arrays.copyOf(arr, arr.length); // копия массива
+        for (int i = 0; i < bubbleArr.length - 1; i++) {
+            for (int j = 0; j < bubbleArr.length - 1 - i; j++) {
+                if (bubbleArr[j] > bubbleArr[j + 1]) {
+                    int temp = bubbleArr[j];
+                    bubbleArr[j] = bubbleArr[j + 1];
+                    bubbleArr[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println("9) Отсортированный массив:");
+        for (int num : bubbleArr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // 10. Объединить два массива в один.
+        int[] arr2 = {100, 200, 300};
+        int[] merged = new int[arr.length + arr2.length];
+        for (int i = 0; i < arr.length; i++) {
+            merged[i] = arr[i];
+        }
+        for (int i = 0; i < arr2.length; i++) {
+            merged[arr.length + i] = arr2[i];
+        }
+        System.out.println("10) Объединённый массив:");
+        for (int num : merged) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        scanner.close();
+    }
+}
+
+--------------------------------------------------------
+5
+Сумма положительных чисел
+Пользователь вводит N чисел. Найти сумму только положительных чисел.
+
+Минимум из трёх чисел
+Ввести три числа и вывести наименьшее.
+
+Таблица квадратов и кубов
+Ввести число N. Вывести таблицу вида:
+
+Число | Квадрат | Куб
+1     | 1       | 1
+2     | 4       | 8
+...
+N     | N^2     | N^3
+
+
+Сумма чётных и нечётных отдельно
+Ввести число N. Найти сумму чётных чисел от 1 до N и сумму нечётных чисел. Вывести обе суммы.
+
+Простое число или нет
+Ввести число n. Определить, является ли оно простым (делится только на 1 и само себя).
+
+Факториал с проверкой
+Ввести число n. Если n < 0 — вывести "Ошибка". Иначе вычислить n!.
+
+Количество цифр числа
+Ввести целое число и посчитать, сколько в нём цифр.
+
+Сумма цифр числа
+Ввести число и найти сумму его цифр.
+
+Первое число, большее 100
+Пользователь вводит числа подряд. Когда встретится число больше 100 — вывести "Стоп" и закончить программу (break).
+
+Пропуск отрицательных
+Пользователь вводит N чисел. Вывести только положительные, а отрицательные пропускать (continue).
+--------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        // 1. Сумма положительных чисел.
+        System.out.print("Сколько чисел вы хотите ввести? ");
+        int n = in.nextInt();
+        int sumPos = 0;
+        for (int i = 0; i < n; i++) {
+            System.out.print("Введите число: ");
+            int num = in.nextInt();
+            if (num > 0) {
+                sumPos += num;
+            }
+        }
+        System.out.println("Сумма положительных чисел = " + sumPos);
+
+        // 2. Минимум из трёх чисел.
+        System.out.println("Введите три числа:");
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int c = in.nextInt();
+        int min = a;
+        if (b < min) min = b;
+        if (c < min) min = c;
+        System.out.println("Наименьшее число: " + min);
+
+        // 3. Таблица квадратов и кубов.
+        System.out.print("Введите число N: ");
+        int N = in.nextInt();
+        System.out.println("Число | Квадрат | Куб");
+        for (int i = 1; i <= N; i++) {
+            System.out.println(i + "     | " + (i * i) + "       | " + (i * i * i));
+        }
+
+        // 4. Сумма чётных и нечётных отдельно.
+        System.out.print("Введите число N: ");
+        int numN = in.nextInt();
+        int sumEven = 0, sumOdd = 0;
+        for (int i = 1; i <= numN; i++) {
+            if (i % 2 == 0) {
+                sumEven += i;
+            } else {
+                sumOdd += i;
+            }
+        }
+        System.out.println("Сумма чётных = " + sumEven);
+        System.out.println("Сумма нечётных = " + sumOdd);
+
+        // 5. Простое число или нет.
+        System.out.print("Введите число для проверки: ");
+        int p = in.nextInt();
+        boolean prime = true;
+        if (p <= 1) prime = false;
+        for (int i = 2; i < p; i++) {
+            if (p % i == 0) {
+                prime = false;
+                break;
+            }
+        }
+        if (prime) {
+            System.out.println(p + " простое число");
+        } else {
+            System.out.println(p + " не простое число");
+        }
+
+        // 6. Факториал с проверкой.
+        System.out.print("Введите число для факториала: ");
+        int f = in.nextInt();
+        if (f < 0) {
+            System.out.println("Ошибка");
+        } else {
+            long fact = 1;
+            for (int i = 1; i <= f; i++) {
+                fact *= i;
+            }
+            System.out.println("Факториал = " + fact);
+        }
+
+        // 7. Количество цифр числа.
+        System.out.print("Введите число: ");
+        int d = in.nextInt();
+        int count = 0;
+        int temp = d;
+        if (temp == 0) count = 1; // для числа 0
+        while (temp != 0) {
+            temp /= 10;
+            count++;
+        }
+        System.out.println("Количество цифр: " + count);
+
+        // 8. Сумма цифр числа.
+        System.out.print("Введите число: ");
+        int s = in.nextInt();
+        int sumDigits = 0;
+        int tmp = s;
+        while (tmp != 0) {
+            sumDigits += tmp % 10;
+            tmp /= 10;
+        }
+        System.out.println("Сумма цифр: " + sumDigits);
+
+        // 9. Первое число, большее 100.
+        while (true) {
+            System.out.print("Введите число: ");
+            int m = in.nextInt();
+            if (m > 100) {
+                System.out.println("Стоп");
+                break;
+            }
+        }
+
+        // 10. Пропуск отрицательных.
+        System.out.print("Сколько чисел вы хотите ввести? ");
+        int k = in.nextInt();
+        for (int i = 0; i < k; i++) {
+            System.out.print("Введите число: ");
+            int q = in.nextInt();
+            if (q < 0) continue; // пропускаем отрицательные
+            System.out.println("Положительное: " + q);
+        }
+
+        in.close();
+    }
+}
+
+--------------------------------------------------------
